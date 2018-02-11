@@ -82,6 +82,8 @@ GEM
     erubi (1.7.0)
     execjs (2.7.0)
     ffi (1.9.21-x86-mingw32)
+    font-awesome-rails (4.7.0.3)
+      railties (>= 3.2, < 5.2)
     globalid (0.4.1)
       activesupport (>= 4.2.0)
     i18n (0.9.4)
@@ -200,6 +202,7 @@ DEPENDENCIES
   coffee-rails (~> 4.2)
   delayed_job_active_record
   devise
+  font-awesome-rails
   jbuilder (~> 2.5)
   jquery-turbolinks
   puma (~> 3.7)
