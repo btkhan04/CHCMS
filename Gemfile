@@ -25,7 +25,7 @@ gem 'turbolinks', '~> 5'
 gem 'jquery-turbolinks'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 gem 'jbuilder', '~> 2.5'
-gem 'bcrypt', platforms: :ruby
+gem 'bcrypt', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 gem 'delayed_job_active_record'
 gem 'jquery-turbolinks'
 gem "font-awesome-rails"
@@ -54,9 +54,9 @@ group :development do
 end
 
 group :production do
-	gem 'pg'
+  gem 'pg', '~> 0.18'
+  gem 'rails_12factor'
 end
-
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
