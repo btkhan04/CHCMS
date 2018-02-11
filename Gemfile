@@ -29,7 +29,8 @@ gem 'jquery-turbolinks'
 gem 'jbuilder', '~> 2.5'
 gem 'bcrypt', platforms: :ruby
 gem 'delayed_job_active_record'
-
+gem 'jquery-turbolinks'
+gem "font-awesome-rails"
 
 # Use Redis adapter to run Action Cable in production
 # gem 'redis', '~> 3.0'
