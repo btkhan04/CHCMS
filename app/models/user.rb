@@ -8,4 +8,8 @@ class User < ApplicationRecord
 	  devise_mailer.send(notification, self, *args).deliver_later
 	end
 
+ def current_user
+      return first_name + " " + last_name 
+  end 
+
 end
