@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180211171626) do
+ActiveRecord::Schema.define(version: 20180212212944) do
 
   create_table "delayed_jobs", force: :cascade do |t|
     t.integer "priority", default: 0, null: false
@@ -48,6 +48,17 @@ ActiveRecord::Schema.define(version: 20180211171626) do
     t.datetime "locked_at"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "first_name"
+    t.string "last_name"
+    t.datetime "date_of_birth"
+    t.string "sex"
+    t.string "mobile"
+    t.string "address"
+    t.string "postcode"
+    t.string "role"
+    t.string "contract_type"
+    t.integer "assigned_hours"
+    t.string "NI"
     t.index ["confirmation_token"], name: "index_users_on_confirmation_token", unique: true
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
