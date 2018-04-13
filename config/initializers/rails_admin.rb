@@ -19,19 +19,51 @@ RailsAdmin.config do |config|
 
   config.model 'User' do
     edit do
-      field :admin
-      field :first_name
-      field :last_name
-      field :email
-      field :date_of_birth
-      field :sex
-      field :mobile
-      field :address
-      field :postcode
-      field :role
-      field :contract_type
-      field :assigned_hours
-      field :NI
+      field :admin, :string do
+        required true
+      end
+      field :first_name, :string do
+        required true
+      end
+      field :last_name, :string do
+        required true 
+      end
+      field :email, :string do
+        required true
+      end
+      field :password, :string do
+        required true
+      end
+      field :password_confirmation, :string do
+        required true
+      end
+      field :date_of_birth, :string do
+        required true
+      end
+      field :sex, :string do
+        required true
+      end
+      field :mobile, :string do
+        required true
+      end
+      field :address, :string do
+        required true
+      end
+      field :postcode, :string do
+        required true
+      end
+      field :role, :string do
+        required true
+      end
+      field :contract_type, :string do
+        required true
+      end
+      field :assigned_hours, :string do
+        required true
+      end
+      field :NI, :string do
+        required true
+      end
     end
   end
 
