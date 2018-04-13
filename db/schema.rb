@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180212212944) do
+ActiveRecord::Schema.define(version: 20180228173830) do
 
   create_table "delayed_jobs", force: :cascade do |t|
     t.integer "priority", default: 0, null: false
@@ -28,6 +28,7 @@ ActiveRecord::Schema.define(version: 20180212212944) do
   end
 
   create_table "users", force: :cascade do |t|
+    t.boolean "admin"
     t.string "name"
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
@@ -59,6 +60,7 @@ ActiveRecord::Schema.define(version: 20180212212944) do
     t.string "contract_type"
     t.integer "assigned_hours"
     t.string "NI"
+    t.string "extra_field"
     t.index ["confirmation_token"], name: "index_users_on_confirmation_token", unique: true
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true

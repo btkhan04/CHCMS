@@ -4,9 +4,13 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable, :confirmable, :lockable
 	
-	def send_devise_notification(notification, *args)
-	  devise_mailer.send(notification, self, *args).deliver_later
-	end
+  def sign_up_params
+    params.require(:user).permit(:first_name, :last_name, :email, :password, :password_confirmation)
+  end
+
+  def account_update_params
+    params.require(:user).permit(:admin, :first_name, :last_name, :email, :password, :password_confirmation, :current_password)
+  end
 
  def current_user
       return first_name + " " + last_name 
