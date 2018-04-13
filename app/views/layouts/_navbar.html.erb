@@ -21,7 +21,7 @@
           </ul>
         </li>
         <li><%= link_to('My Account', edit_user_registration_path) %></li>
-        <% if current_user.admin = true %>
+        <% if current_user.try(:admin?) %>
         <li><%= link_to('Admin', rails_admin.dashboard_path) %></li>
         <% end %>
       </ul>
