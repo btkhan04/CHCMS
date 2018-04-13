@@ -21,7 +21,9 @@
           </ul>
         </li>
         <li><%= link_to('My Account', edit_user_registration_path) %></li>
-        <li><a href="#">My Calender</a></li>
+        <% if current_user.admin = true %>
+        <li><%= link_to('Admin', rails_admin.dashboard_path) %></li>
+        <% end %>
       </ul>
       <ul class="nav navbar-nav navbar-right">
           <li><%= link_to "Sign out", destroy_user_session_path, :method => :delete %></li>
