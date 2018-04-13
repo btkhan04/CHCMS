@@ -5,6 +5,8 @@ RailsAdmin.config do |config|
       field :first_name
       field :last_name
       field :email
+      field :password
+      field :password_confirmation
       field :date_of_birth
       field :sex
       field :mobile
@@ -19,9 +21,7 @@ RailsAdmin.config do |config|
 
   config.model 'User' do
     edit do
-      field :admin, :string do
-        required true
-      end
+      field :admin
       field :first_name, :string do
         required true
       end
@@ -31,15 +31,9 @@ RailsAdmin.config do |config|
       field :email, :string do
         required true
       end
-      field :password, :string do
-        required true
-      end
-      field :password_confirmation, :string do
-        required true
-      end
-      field :date_of_birth, :string do
-        required true
-      end
+      field :password
+      field :password_confirmation
+      field :date_of_birth
       field :sex, :string do
         required true
       end
@@ -73,6 +67,8 @@ RailsAdmin.config do |config|
       field :first_name
       field :last_name
       field :email
+      field :password
+      field :password_confirmation
       field :date_of_birth
       field :sex
       field :mobile
