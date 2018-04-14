@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
 
+  get 'residents/new'
+
   mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
   # devise_for :users
   root to: 'pages#index'
