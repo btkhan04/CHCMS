@@ -1,4 +1,10 @@
 RailsAdmin.config do |config|
+   config.model 'Resient' do
+    list do
+      field :first_name
+      field :last_name
+    end
+  end
   config.model 'User' do
     list do
       field :admin
