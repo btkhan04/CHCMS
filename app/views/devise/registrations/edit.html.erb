@@ -1,24 +1,4 @@
 <h2>Account Details</h2>
-<nav class="navbar-inverse">
-  <div class="container-fluid">
-    <div class="navbar-header">
-      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>                        
-      </button>
-    </div>
-    <div class="collapse navbar-collapse" id="myNavbar">
-      <ul class="nav navbar-nav">
-        <% if user_signed_in? %>
-          <li><a href="#">Personal Details</a></li>
-          <li><a href="#">Employee Information</a></li>
-          <li><%= link_to('My Account', edit_user_registration_path) %></li>
-      </ul>
-        <% end %>
-    </div>
-  </div>
-</nav>
 
 <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
   <%= devise_error_messages! %> 

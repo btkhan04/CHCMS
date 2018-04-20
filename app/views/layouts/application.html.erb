@@ -9,18 +9,20 @@
   </head>
   <body>
   	<%= render 'layouts/navbar' %>
-	<div class="container">
-	  <% flash.each do |key, value| %>
-	    <div class="alert alert-<%= key %>">
-	      <%= value %>
-	    </div>
-	  <% end %>
-	</div>
-	<%= yield :top_content %>
+
+  	<% flash.each do |key, value| %>
+		<div class="text-center <%= flash_class(key) %>">
+			<%= value %>
+		</div>
+	<% end %>
 
 	<div class="container">
-	    <h1><%= yield :header %></h1>
 	  <%= yield %>
+	</div>
+
+	<%= yield :top_content %>
+
+	
 	</div>
   </body>
 </html>
