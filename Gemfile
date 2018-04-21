@@ -29,6 +29,8 @@ gem 'bcrypt', git: 'https://github.com/codahale/bcrypt-ruby.git', :require => 'b
 gem 'font-awesome-rails'
 gem 'twitter-bootstrap-rails'
 gem 'rails_admin', '~> 1.3'
+gem 'mailboxer'
+gem 'chosen-rails'
 # Use Redis adapter to run Action Cable in production
 # gem 'redis', '~> 3.0'
 # Use ActiveModel has_secure_password

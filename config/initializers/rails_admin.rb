@@ -87,6 +87,10 @@ RailsAdmin.config do |config|
     end
   end
 
+  config.model 'Conversation' do
+   visible false
+  end
+
  config.authorize_with do
     redirect_to main_app.root_path unless warden.user.admin == true
   end
@@ -114,7 +118,9 @@ RailsAdmin.config do |config|
   # config.show_gravatar = true
 
   config.actions do
-    dashboard                     # mandatory
+    dashboard do
+      except ['Conversations']
+    end                   # mandatory
     index                         # mandatory
     new
     export

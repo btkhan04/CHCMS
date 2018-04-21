@@ -18,6 +18,17 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable, :confirmable, :lockable
 
+  acts_as_messageable
+
+  def mailboxer_name
+    self.name
+  end
+
+  def mailboxer_email(object)
+    self.email
+  end
+
+
   def password_complexity
     if password.present? and not password.match(/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d). /)
       errors.add :password, "must include at least one lowercase letter, one uppercase letter, and one digit"
@@ -32,8 +43,7 @@ class User < ApplicationRecord
     params.require(:user).permit(:admin, :first_name, :last_name, :email, :password, :password_confirmation, :current_password)
   end
 
- def current_user
+  def name
       return first_name + " " + last_name 
   end 
-
 end
