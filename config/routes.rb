@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
 
+  resources :shifts
   get 'residents/new'
 
   mount RailsAdmin::Engine => '/admin', as: 'rails_admin'

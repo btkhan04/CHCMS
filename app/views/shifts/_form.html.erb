@@ -1,0 +1,40 @@
+<%= form_with(model: shift, local: true) do |form| %>
+  <% if shift.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(shift.errors.count, "error") %> prohibited this shift from being saved:</h2>
+
+      <ul>
+      <% shift.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :Staff %>
+    <%= form.select(:title, User.all.collect {|p| [ p.first_name, p.name ] }, {include_blank: false}) %>
+  </div>
+
+  <div class="field">
+    <%= form.label :description %>
+    <%= form.text_area :description, id: :shift_description %>
+  </div>
+
+  <div class="field">
+    <%= form.label :start_time %>
+    <%= form.datetime_select :start_time, id: :shift_start_time %>
+  </div>
+
+  <div class="field">
+    <%= form.label :end_time %>
+    <%= form.datetime_select :end_time, id: :shift_end_time %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>
+
+
+
