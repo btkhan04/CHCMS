@@ -1,28 +1,42 @@
-<!DOCTYPE html>
 <html>
   <head>
     <title>CHCMS</title>
-    <%= csrf_meta_tags %>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href='http://fullcalendar.io/js/fullcalendar-scheduler-1.1.0/lib/fullcalendar.min.css' rel='stylesheet' />
+    <link href='https://code.jquery.com/ui/1.11.4/themes/cupertino/jquery-ui.css' rel='stylesheet' />
+    <link href='https://code.jquery.com/ui/1.11.4/themes/cupertino/jquery-ui.min.css' rel='stylesheet' />
+    <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/bootstrap/3/css/bootstrap.css" />
+	<link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/bootstrap.daterangepicker/2/daterangepicker.css" />
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <%= stylesheet_link_tag "https://yandex.st/bootstrap/3.0.2/css/bootstrap.min.css", media: "all" %>
+    <%= javascript_include_tag "https://yandex.st/bootstrap/3.0.2/js/bootstrap.min.js" %>
+
+    <%= csrf_meta_tags %>
+
+
   </head>
   <body>
-  	<%= render 'layouts/navbar' %>
+    <%= render 'layouts/navbar' %>
 
-  	<% flash.each do |key, value| %>
-		<div class="text-center <%= flash_class(key) %>">
-			<%= value %>
-		</div>
-	<% end %>
+    <% flash.each do |key, value| %>
+    <div class="text-center <%= flash_class(key) %>">
+      <%= value %>
+    </div>
+  <% end %>
 
-	<div class="container">
-	  <%= yield %>
-	</div>
+  <div class="container">
+    <%= yield %>
+  </div>
 
-	<%= yield :top_content %>
+  <%= yield :top_content %>
 
-	
-	</div>
+  
+  </div>
+    <script type="text/javascript" src="//cdn.jsdelivr.net/bootstrap.daterangepicker/2/daterangepicker.js"></script>
+   <script src='http://fullcalendar.io/js/fullcalendar-scheduler-1.1.0/lib/moment.min.js'></script>
+    <script src='http://fullcalendar.io/js/fullcalendar-scheduler-1.1.0/lib/fullcalendar.min.js'></script>
+    <script src='http://fullcalendar.io/js/fullcalendar-scheduler-1.1.0/scheduler.min.js'></script>
   </body>
 </html>

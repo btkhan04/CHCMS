@@ -16,6 +16,7 @@ gem 'sass-rails', '~> 5.0'
 gem 'uglifier', '>= 1.3.0'
 # See https://github.com/rails/execjs#readme for more supported runtimes
 # gem 'therubyracer', platforms: :ruby
+gem 'jquery-rails'
 gem 'devise'
 gem 'bootstrap-sass'
 # Use CoffeeScript for .coffee assets and views
@@ -31,6 +32,11 @@ gem 'twitter-bootstrap-rails'
 gem 'rails_admin', '~> 1.3'
 gem 'mailboxer'
 gem 'chosen-rails'
+gem 'jquery-ui-rails'
+gem 'jquery-timepicker-rails'
+gem 'fullcalendar-rails',     '~> 2.6', '>= 2.6.1.0'
+gem 'momentjs-rails'  
+gem 'simple_form'
 # Use Redis adapter to run Action Cable in production
 # gem 'redis', '~> 3.0'
 # Use ActiveModel has_secure_password
@@ -55,7 +61,6 @@ group :development do
 end
 
 group :production do
-  gem 'pg', '~> 0.18'
   gem 'rails_12factor'
 end
 

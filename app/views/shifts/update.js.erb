@@ -1,0 +1,7 @@
+$('.calendar').fullCalendar('removeEvents', [<%= @shift.id %>]);
+$('.calendar').fullCalendar(
+  'renderEvent', 
+  $.parseJSON("<%=j render(@shift, format: :json).html_safe %>"), 
+  true
+);
+$('.modal').modal('hide');
