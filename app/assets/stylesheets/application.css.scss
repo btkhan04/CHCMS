@@ -13,6 +13,7 @@
  *= require jquery-ui/datepicker
  *= require jquery.timepicker.css
  *= require_self
+ *= require font-awesome
  *= require fullcalendar
  *= require_tree .
  */
@@ -28,4 +29,38 @@
 
 .alert-notice {
   @extend .alert-info;
+}
+
+.footer {
+   left:0px;
+   bottom:0px;
+   height:80px;
+   width:100%;
+   background: #191970;
+   color:#000;
+   vertical-align: middle;
+}
+
+.footer {
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  padding: 1rem;
+  background-color: #efefef;
+  text-align: center;
+}
+
+.fa-lg:hover { color: #800000 }
+.fa-lg:hover > i { color: #800000; }
+
+.ver {
+	align-items: center;
+}
+
+
+.jumbotron h1 {
+    line-height: 1;
+    color: inherit;
+    text-align: center;
 }
