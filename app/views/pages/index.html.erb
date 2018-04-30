@@ -10,6 +10,18 @@
 	</div>
   </div>
   <%= pie_chart Resident.total %>
+    <%= pie_chart Medical.medical %>
+
+
+  <%= column_chart Medical.medical,
+  title: "Medical Conditions",
+  colors: ['brown'],
+  library: {
+    tooltip: {
+      pointFormat: 'MediNotes'
+    }
+  }
+%>
 
 <%= column_chart User.by_gender,
   title: "Total count of residents",

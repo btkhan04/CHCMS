@@ -26,6 +26,11 @@
     <%= form.text_area :next_of_kin, id: :resident_next_of_kin %>
   </div>
 
+   <div class="field">
+    <%= form.label :name %>
+    <%= form.select(:title, Medical.all.collect {|p| [ p.name, p.name ] }, {include_blank: false}) %>
+  </div>
+
   <div class="actions">
     <%= form.submit %>
   </div>

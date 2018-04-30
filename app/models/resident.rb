@@ -1,4 +1,5 @@
 class Resident < ApplicationRecord
+	has_many :medicals
 	def self.by_gender
 		self.group("sex").count
 	end

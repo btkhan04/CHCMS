@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
 
+  resources :medicals
  resources :shifts
  resources :residents
  mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
