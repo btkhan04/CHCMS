@@ -1,9 +1,8 @@
 Rails.application.routes.draw do
 
-  resources :shifts
-  get 'residents/new'
-
-  mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
+ resources :shifts
+ resources :residents
+ mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
   # devise_for :users
   root to: 'pages#index'
   get 'pages/index'
