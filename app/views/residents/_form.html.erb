@@ -1,0 +1,32 @@
+<%= form_with(model: resident, local: true) do |form| %>
+  <% if resident.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(resident.errors.count, "error") %> prohibited this resident from being saved:</h2>
+
+      <ul>
+      <% resident.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :first_name %>
+    <%= form.text_area :first_name, id: :resident_first_name %>
+  </div>
+
+  <div class="field">
+    <%= form.label :last_name %>
+    <%= form.text_area :last_name, id: :last_name %>
+  </div>
+
+  <div class="field">
+    <%= form.label :next_of_kin %>
+    <%= form.text_area :next_of_kin, id: :resident_next_of_kin %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

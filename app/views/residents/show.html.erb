@@ -1,0 +1,18 @@
+<p id="notice"><%= notice %></p>
+<p>
+  <strong>Fist Name:</strong>
+  <%= @resident.first_name %>
+</p>
+
+<p>
+  <strong>Last Name:</strong>
+  <%= @resident.last_name %>
+</p>
+
+<p>
+  <strong>Next of Kin:</strong>
+  <%= @resident.next_of_kin %>
+</p>
+
+<%= link_to 'Edit', edit_resident_path(@resident) %> |
+<%= link_to 'Back', residents_path %>
