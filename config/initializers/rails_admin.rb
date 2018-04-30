@@ -1,5 +1,6 @@
 RailsAdmin.config do |config|
-   config.model 'Resient' do
+
+   config.model 'Resident' do
     list do
       field :first_name
       field :last_name

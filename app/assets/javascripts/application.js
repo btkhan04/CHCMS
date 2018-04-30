@@ -18,6 +18,8 @@
 //= require jquery.timepicker.js
 //= require jquery-ui/datepicker
 //= require bootstrap-sprockets
+//= require highcharts
+//= require chartkick
 //= require fullcalendar
 //= require turbolinks
 //= require_tree .

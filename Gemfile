@@ -38,6 +38,8 @@ gem 'fullcalendar-rails',     '~> 2.6', '>= 2.6.1.0'
 gem 'momentjs-rails'  
 gem 'simple_form'
 gem "font-awesome-rails"
+gem 'chartkick'
+gem 'highcharts-rails'
 # Use Redis adapter to run Action Cable in production
 # gem 'redis', '~> 3.0'
 # Use ActiveModel has_secure_password

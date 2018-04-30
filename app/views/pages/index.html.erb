@@ -7,4 +7,18 @@
 	  <i class="fa fa-calendar-alt fa-5x fa-lg"></i>
 	  <span><span class="label label-danger pull-left"><%=unread_messages_count%></span><i class="fas fa-user fa-5x fa-lg"></i></span>
   </div>
+  <%= pie_chart Resident.total %>
+
+<%= column_chart User.by_gender,
+  title: "Total count of residents",
+  colors: ['brown'],
+  library: {
+    tooltip: {
+      pointFormat: 'Count by gender'
+    }
+  }
+%>
+<br>
+<br>
+<br>
 <% end%>
