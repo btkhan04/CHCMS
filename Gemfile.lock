@@ -66,6 +66,7 @@ GEM
       activemodel (>= 4.0.0)
       activesupport (>= 4.0.0)
       mime-types (>= 1.16)
+    chartkick (2.3.4)
     childprocess (0.8.0)
       ffi (~> 1.0, >= 1.0.11)
     chosen-rails (1.8.3)
@@ -102,6 +103,8 @@ GEM
     haml (5.0.4)
       temple (>= 0.8.0)
       tilt
+    highcharts-rails (6.0.3)
+      railties (>= 3.1)
     i18n (0.9.4)
       concurrent-ruby (~> 1.0)
     jbuilder (2.7.0)
@@ -282,11 +285,13 @@ DEPENDENCIES
   bootstrap-sass
   byebug
   capybara (~> 2.13)
+  chartkick
   chosen-rails
   coffee-rails (~> 4.2)
   devise
   font-awesome-rails
   fullcalendar-rails (~> 2.6, >= 2.6.1.0)
+  highcharts-rails
   jbuilder (~> 2.5)
   jquery-rails
   jquery-timepicker-rails

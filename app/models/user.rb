@@ -20,6 +20,10 @@ class User < ApplicationRecord
 
   acts_as_messageable
 
+  def self.by_gender
+    self.group("sex").count
+  end
+
   def mailboxer_name
     self.name
   end
