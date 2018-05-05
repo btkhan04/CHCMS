@@ -19,6 +19,7 @@
         <% end %></li>
         <li><%= link_to('Residents', residents_path) %></li>
         <li><%= link_to('Medical Conditions', medicals_path) %></li>
+        <li><%= link_to('Add Notes', new_note_path) %></li>
         <li><%= link_to('My Account', edit_user_registration_path) %></li>
         <li><%= link_to('Rota', shifts_path) %></li>
         <% if current_user.try(:admin?) %>

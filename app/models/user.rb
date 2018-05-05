@@ -17,6 +17,10 @@ class User < ApplicationRecord
   # :confirmable, :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable, :confirmable, :lockable
+  
+  has_many :shifts
+  has_many :notes
+  has_many :medical_notes
 
   acts_as_messageable
 

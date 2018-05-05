@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @note.name %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @note.description %>
+</p>
+
+<p>
+  <strong>Food intake:</strong>
+  <%= @note.food_intake %>
+</p>
+
+<p>
+  <strong>Fluid intake:</strong>
+  <%= @note.fluid_intake %>
+</p>
+
+<p>
+  <strong>Medicine:</strong>
+  <%= @note.medicine %>
+</p>
+
+<%= link_to 'Edit', edit_note_path(@note) %> |
+<%= link_to 'Back', notes_path %>

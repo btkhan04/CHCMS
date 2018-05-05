@@ -1,0 +1,26 @@
+
+<%= simple_form_for(@note) do |f| %>
+  <%= f.error_notification %>
+  <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
+
+  <div class="form-inputs">
+
+    <div class="field">
+      <%= f.label :name %>
+      <%= f.select(:name,  Resident.all.collect {|p| [ p.first_name, p.fullname ] }, {include_blank: false}, class: 'form-control') %>
+    </div>
+
+    <%= f.input :description %>
+
+    <%= f.input :food_intake %>
+
+    <%= f.input :fluid_intake %>
+
+    <%= f.input :medicine %>
+
+  </div>
+
+  <div class="form-actions">
+    <%= f.button :submit %>
+  </div>
+<% end %>

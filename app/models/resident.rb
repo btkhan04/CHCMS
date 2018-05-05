@@ -1,5 +1,7 @@
 class Resident < ApplicationRecord
-	has_many :medicals
+	has_many :medical
+	has_many :notes 
+	
 	def self.by_gender
 		self.group("sex").count
 	end
@@ -7,4 +9,8 @@ class Resident < ApplicationRecord
 	def self.total
 		self.group("first_name").count
 	end
+    def fullname
+	    self.first_name << " " << self.last_name
+	end
+ 
 end
