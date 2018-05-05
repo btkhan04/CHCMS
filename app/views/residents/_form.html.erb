@@ -27,8 +27,8 @@
   </div>
 
    <div class="field">
-    <%= form.label :name %>
-    <%= form.select(:title, Medical.all.collect {|p| [ p.name, p.name ] }, {include_blank: false}) %>
+    <%= form.label :medical_condition %>
+    <%= form.select(:medical_condition, Medical.all.collect {|p| [ p.name, p.name ] }, {include_blank: false}) %>
   </div>
 
   <div class="actions">

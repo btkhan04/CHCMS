@@ -1,13 +1,15 @@
 <p id="notice"><%= notice %></p>
 
 <h1>Residents</h1>
-
-<table>
+<%= link_to 'New Resident', new_resident_path %>
+<br>
+<br>
+<table class="table table-striped table-bordered">
     <thead>
       <tr>
-        <th>First Name</th>
-        <th>Last Name</th>
+        <th>Name</th>
         <th>Next of Kin</th>
+        <th>Date of Birth</th>
         <th>Medical Conditions</th>
         <th colspan="3"></th>
       </tr>
@@ -16,17 +18,18 @@
   <tbody>
     <% @residents.each do |resident| %>
       <tr>
-        <td><%= resident.first_name %></td>
-        <td><%= resident.last_name %></td>
+        <td><%= resident.fullname %></td>
         <td><%= resident.next_of_kin %></td>
+        <td><%= resident.date_of_birth %></td>
+        <td><%= resident.date_of_birth %></td>
         <td><%= link_to 'Show', resident %></td>
+        <% if current_user.try(:admin?) %>
         <td><%= link_to 'Edit', edit_resident_path(resident) %></td>
         <td><%= link_to 'Destroy', resident, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <% end %>
       </tr>
     <% end %>
   </tbody>
 </table>
 
 <br>
-
-<%= link_to 'New Resident', new_resident_path %>

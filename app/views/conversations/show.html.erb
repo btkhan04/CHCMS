@@ -8,7 +8,7 @@
         <%= link_to 'Untrash', untrash_conversation_path(conversation), class: 'btn btn-info', method: :post %>
     <% else %>
         <%= link_to 'Move to trash', trash_conversation_path(conversation), class: 'btn btn-danger', method: :post,
-                    data: {confirm: 'Are you sure?'} %>
+                    data: {confirm: 'Are you sure?'} %><br><br>
     <% end %>
   </div>
 </div>

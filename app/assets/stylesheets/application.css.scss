@@ -31,24 +31,20 @@
   @extend .alert-info;
 }
 
-.footer {
-   left:0px;
-   bottom:0px;
-   height:80px;
-   width:100%;
-   background: #191970;
-   color:#000;
-   vertical-align: middle;
+
+.nav {
+	color: white;	
 }
 
 .footer {
-  position: fixed;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  padding: 1rem;
-  background-color: #efefef;
-  text-align: center;
+	position: fixed;
+	left: 0;
+	bottom: 0;
+	width: 100%;
+	height: 35px;
+	background-color: #333;
+	color: white;
+	text-align: center;
 }
 
 .fa-lg:hover { color: #800000 }
@@ -63,4 +59,33 @@
     line-height: 1;
     color: inherit;
     text-align: center;
+}
+
+/* User sign in and sign forms. */
+.border-form-div {
+  max-width: 500px;
+  text-align: center;
+  padding: 19px 29px 29px;
+  margin: 0 auto 20px;
+  background-color: #fff;
+  border: 1px solid #e5e5e5;
+  -webkit-border-radius: 5px;
+     -moz-border-radius: 5px;
+          border-radius: 5px;
+  -webkit-box-shadow: 0 1px 2px rgba(0,0,0,.05);
+     -moz-box-shadow: 0 1px 2px rgba(0,0,0,.05);
+          box-shadow: 0 1px 2px rgba(0,0,0,.05);
+}
+.border-form-div .form-signin-heading,
+.border-form-div .checkbox {
+  margin-bottom: 10px;
+}
+.border-form-div input[type="text"],
+.border-form-div input[type="email"],
+.border-form-div input[type="password"] {
+  font-size: 12px;
+  height: auto;
+  width: 100%;
+  margin-bottom: 15px;
+  padding: 7px 9px;
 }

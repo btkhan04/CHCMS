@@ -82,9 +82,7 @@
     <%= f.password_field :current_password, class: "form-control", autocomplete: "off" %>
   </div>
 
-  <div class="actions">
-    <%= f.submit "Update" %>
-  </div>
+  <%= f.submit "Update", class: 'btn btn-primary form-control' %>
 <% end %>
 
 <%= link_to "Back", :back %>

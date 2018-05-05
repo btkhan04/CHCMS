@@ -1,16 +1,21 @@
+<div class="border-form-div">
+<h2>CHCMS</h2>
+  <div class="icons" style="width:350px; margin:0 auto;">
+    <i class="fa fa-comment fa-5x fa-lg"></i>
+    <i class="fa fa-calendar-alt fa-5x fa-lg"></i>
+    <i class="fas fa-user fa-5x fa-lg"></i>
+  </div>
 <h2>Resend unlock instructions</h2>
 
 <%= form_for(resource, as: resource_name, url: unlock_path(resource_name), html: { method: :post }) do |f| %>
   <%= devise_error_messages! %>
 
   <div class="field">
-    <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+    <%= f.email_field :email, autofocus: true, autocomplete: "email", placeholder: 'Email address' %>
   </div>
 
-  <div class="actions">
-    <%= f.submit "Resend unlock instructions" %>
-  </div>
+  <%= f.submit "Resend unlock instructions", class: 'btn btn-primary form-control' %>
 <% end %>
 
 <%= render "users/shared/links" %>
+</div>
