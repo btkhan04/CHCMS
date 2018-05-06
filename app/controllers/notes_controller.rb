@@ -1,6 +1,6 @@
 class NotesController < ApplicationController
   before_action :set_note, only: [:show, :edit, :update, :destroy]
-
+    before_action :authenticate_user!, eexcept: [:index, :show]
   # GET /notes
   # GET /notes.json
   def index
@@ -10,11 +10,13 @@ class NotesController < ApplicationController
   # GET /notes/1
   # GET /notes/1.json
   def show
+    @note = Note.find(params[:id])
+    @resident =  @note.resident
   end
 
   # GET /notes/new
   def new
-    @note = Note.new
+    @note = current_user.notes.build
   end
 
   # GET /notes/1/edit
@@ -24,7 +26,7 @@ class NotesController < ApplicationController
   # POST /notes
   # POST /notes.json
   def create
-    @note = Note.new(note_params)
+    @note = current_user.notes.build(note_params)
 
     respond_to do |format|
       if @note.save
@@ -69,6 +71,6 @@ class NotesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def note_params
-      params.require(:note).permit(:name, :description, :food_intake, :fluid_intake, :medicine)
+      params.require(:note).permit(:name, :description, :food_intake, :fluid_intake, :medicine, :resident_id, :user_id, :medical_conditions)
     end
 end

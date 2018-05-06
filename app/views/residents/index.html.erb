@@ -1,7 +1,7 @@
 <p id="notice"><%= notice %></p>
 
 <h1>Residents</h1>
-<%= link_to 'New Resident', new_resident_path %>
+<%= button_to "Add new resident", new_resident_path, class: 'btn btn-primary' ,:method => :get  %>
 <br>
 <br>
 <table class="table table-striped table-bordered">

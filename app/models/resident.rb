@@ -1,6 +1,6 @@
 class Resident < ApplicationRecord
-	has_many :medical
-	has_many :notes 
+	# has_many :medical, ->{ order(:name).distinct } 
+	has_many :notes, foreign_key: "note_id"
 	
 	# def date_of_birth
 	# 	self.date_of_birth ?  "#{self.date_of_birth.strftime('%d/%m/%y')} (#{self.age}" : ''
@@ -23,6 +23,5 @@ class Resident < ApplicationRecord
 	end
     def fullname
 	    self.first_name << " " << self.last_name
-	end
- 
+	end 
 end

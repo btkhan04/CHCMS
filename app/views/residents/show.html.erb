@@ -1,18 +1,32 @@
 <p id="notice"><%= notice %></p>
-<p>
-  <strong>Fist Name:</strong>
-  <%= @resident.first_name %>
-</p>
 
-<p>
-  <strong>Last Name:</strong>
-  <%= @resident.last_name %>
-</p>
+<h1>Residents</h1>
+<%= link_to 'New Resident', new_resident_path %>
+<br>
+<br>
+<table class="table table-striped table-bordered">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Next of Kin</th>
+        <th>Date of Birth</th>
+        <th colspan="3"></th>
+      </tr>
+    </thead>
 
-<p>
-  <strong>Next of Kin:</strong>
-  <%= @resident.next_of_kin %>
-</p>
+  <tbody>
+      <tr>
+        <td><%= @resident.fullname %></td>
+        <td><%= @resident.next_of_kin %></td>
+  
+      </tr>
+  </tbody>
+</table>
+
+<br>
+<p id="notice"><%= notice %></p>
+
+<%= @resident %>
 
 <%= link_to 'Edit', edit_resident_path(@resident) %> |
 <%= link_to 'Back', residents_path %>

@@ -10,6 +10,7 @@ class ResidentsController < ApplicationController
   # GET /resident2s/1
   # GET /resident2s/1.json
   def show
+
   end
 
   # GET /resident2s/new
@@ -70,6 +71,6 @@ class ResidentsController < ApplicationController
     # Never trust parameters from the scary internet, only allow the white list through.
     def resident_params
       # params.fetch(:resident, {:first_name, :last_name, :next_of_kin})
-      params.require(:resident).permit(:first_name, :last_name, :next_of_kin, :medical)
+      params.require(:resident).permit(:first_name, :last_name, :next_of_kin, :date_of_birth, :sex, :mobile, :address, :postcode, :medical_conditions)
     end
 end

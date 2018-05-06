@@ -37,7 +37,6 @@
 }
 
 .footer {
-	position: fixed;
 	left: 0;
 	bottom: 0;
 	width: 100%;
@@ -88,4 +87,39 @@
   width: 100%;
   margin-bottom: 15px;
   padding: 7px 9px;
+}
+
+.table-bordered {
+  background-color: #ffffff;
+}
+
+.table-bordered > thead {
+  background-color: #555555;
+  color: #fff;
+}
+
+.table-bordered thead > tr > th {
+  border: 0;
+}
+
+table tr.summary-row td:first-child:before {
+  content: "\25B8";
+  display: inline-block;
+  margin-right:5px;
+}
+
+table tr.summary-row td:first-child:hover:before {
+  cursor: pointer;
+}
+
+table tr.summary-row.sup td:first-child:before {
+  vertical-align: super;
+}
+
+td.row-expanded:before {
+  -webkit-transform: rotate(90deg);
+  -moz-transform: rotate(90deg);
+  -o-transform: rotate(90deg);
+  -ms-transform: rotate(90deg);
+  transform: rotate(90deg);
 }

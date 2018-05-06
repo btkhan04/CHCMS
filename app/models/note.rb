@@ -1,5 +1,4 @@
 class Note < ApplicationRecord
-
-	belongs_to :resident 
+	has_and_belongs_to_many :resident 
 	belongs_to :user
 end
