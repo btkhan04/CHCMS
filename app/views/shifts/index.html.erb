@@ -1,8 +1,9 @@
 <p id="notice"><%= notice %></p>
 
 <h1>Shifts</h1>
-
-<%= link_to 'New Shift', new_shift_path %>
+<% if current_user.try(:admin?) %>
+  <%= button_to "Create new shift", new_shift_path, class: 'btn btn-primary' ,:method => :get  %>
+<% end %>
 <div id='calendar'></div>
 
 <br>
@@ -26,13 +27,16 @@
           <td><%= shift.description %></td>
           <td><%= shift.start_time %></td>
           <td><%= shift.end_time %></td>
-          <td><%= link_to 'Show', shift %></td>
-          <td><%= link_to 'Edit', edit_shift_path(shift) %></td>
-          <td><%= link_to 'Destroy', shift, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+          <td><%= link_to 'Show', shift, class: "btn btn-info" %></td>
+          <% if current_user.try(:admin?) %>
+          <td><%= link_to 'Edit', edit_shift_path(shift), class: "btn btn-success" %></td>
+          <td><%= link_to 'Destroy', shift, class: "btn btn-danger", method: :delete, data: { confirm: 'Are you sure?' } %></td>
+          <% end %>
         </tr>
       <% end %>
     </tbody>
   </table>
 <% end %>
-
+<br>
+<br>
 <br>

@@ -11,7 +11,7 @@
     <div class="collapse navbar-collapse" id="myNavbar">
       <ul class="nav navbar-nav">
         <% if user_signed_in? %>
-        <li class="active"><a href="#">Dashboard</a></li>
+        <li class="active"><%= link_to 'Dashboard', root_path %></li>
         <li><%= link_to mailbox_inbox_path do  %>
           <span class="label label-danger pull-right"><%=unread_messages_count%></span>
           <em class="fa fa-inbox fa-lg"></em>
@@ -20,6 +20,7 @@
         <li><%= link_to('Residents', residents_path) %></li>
         <li><%= link_to('Medical Conditions', medicals_path) %></li>
         <li><%= link_to('Add Notes', new_note_path) %></li>
+        <li><%= link_to('View Notes', notes_path) %></li>
         <li><%= link_to('My Account', edit_user_registration_path) %></li>
         <li><%= link_to('Rota', shifts_path) %></li>
         <% if current_user.try(:admin?) %>

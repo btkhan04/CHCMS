@@ -5,6 +5,7 @@ class ShiftsController < ApplicationController
   # GET /shifts.json
   def index
     @shifts = Shift.all
+        @date = params[:start_time] ? Date.parse(params[:start_time]) : Date.today
   end
 
   # GET /shifts/1
@@ -61,6 +62,14 @@ class ShiftsController < ApplicationController
     end
   end
 
+  def find_shift
+    #@shift = current_user.shifts.find(params[:id])
+
+    #@shift = current_user.shifts.find(params[:id])
+
+    @shift = Shift.find(params[:id])
+  end
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_shift
@@ -69,6 +78,6 @@ class ShiftsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def shift_params
-      params.require(:shift).permit(:title, :description, :start_time, :end_time)
+      params.require(:shift).permit(:date, :title, :description, :start_time, :end_time, :user_id)
     end
 end

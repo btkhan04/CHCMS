@@ -3,6 +3,11 @@ class NotesController < ApplicationController
     before_action :authenticate_user!, eexcept: [:index, :show]
   # GET /notes
   # GET /notes.json
+
+  def find
+    @note = Note.new
+  end
+
   def index
     @notes = Note.all
   end
@@ -17,8 +22,14 @@ class NotesController < ApplicationController
   # GET /notes/new
   def new
     @note = current_user.notes.build
+    # @note = Resident.find(params[:resident_id]) if params[:resident_id]
+    # @note = Note.new
+    # setup_new
   end
 
+  def setup_new
+    @users = User.order(:first_name)
+  end
   # GET /notes/1/edit
   def edit
   end
@@ -27,6 +38,9 @@ class NotesController < ApplicationController
   # POST /notes.json
   def create
     @note = current_user.notes.build(note_params)
+   # @note = Note.new(note_params.merge(
+   #    user_id: current_user,
+   #    resident_id: params[:resident_id]))
 
     respond_to do |format|
       if @note.save

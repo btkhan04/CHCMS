@@ -2,14 +2,14 @@
 
 <h1>Medicals</h1>
 
-<%= link_to 'New Medical', new_medical_path %>
+<%= link_to 'New Medical', new_medical_path, class: 'btn btn-info' %>
+<br>
+<br>
 
-<br>
-<br>
 <table class="table table-striped table-bordered">
   <thead>
     <tr>
-      <th>Name</th>
+      <th>Medical condition</th>
       <th>Description</th>
       <th colspan="3"></th>
     </tr>
@@ -20,9 +20,9 @@
       <tr>
         <td><%= medical.name %></td>
         <td><%= medical.description %></td>
-        <td><%= link_to 'Show', medical %></td>
-        <td><%= link_to 'Edit', edit_medical_path(medical) %></td>
-        <td><%= link_to 'Destroy', medical, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Show', medical, class: 'btn btn-info' %></td>
+        <td><%= link_to 'Edit', edit_medical_path(medical), class: 'btn btn-success' %></td>
+        <td><%= link_to 'Destroy', medical, class: 'btn btn-danger', method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>

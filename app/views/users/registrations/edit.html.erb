@@ -5,6 +5,11 @@
 
 
   <div class="field">
+    <%= f.label :role %><br />
+    <%= f.text_field :role, class: "form-control" %>
+  </div>
+
+  <div class="field">
     <%= f.label :first_name %><br />
     <%= f.text_field :first_name, class: "form-control" %>
   </div>
@@ -82,7 +87,9 @@
     <%= f.password_field :current_password, class: "form-control", autocomplete: "off" %>
   </div>
 
-  <%= f.submit "Update", class: 'btn btn-primary form-control' %>
+  <%= f.submit "Update", class: 'btn btn-primary' %>
+  <br>
+  <br>
 <% end %>
 
-<%= link_to "Back", :back %>
+<%= button_to "Back", :back, class: 'btn btn-primary' ,:method => :get  %>

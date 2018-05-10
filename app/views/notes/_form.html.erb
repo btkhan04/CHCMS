@@ -1,5 +1,4 @@
-
-<%= simple_form_for(@note) do |f| %>
+<%= simple_form_for(Note.new, :url => { :action => "create" }) do |f| %>
   <%= f.error_notification %>
   <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
 
@@ -7,7 +6,7 @@
 
     <div class="field">
       <%= f.label :name %>
-      <%= f.select(:name,  Resident.all.collect {|p| [ p.first_name, p.fullname ] }, {include_blank: false}, class: 'form-control') %>
+      <%= f.select(:name, Resident.all.collect {|p| [ p.first_name, p.fullname ] }, {include_blank: false}, class: 'form-control') %>
     </div>
 
     <%= f.input :description %>
@@ -21,6 +20,8 @@
   </div>
 
   <div class="form-actions">
-    <%= f.button :submit %>
+    <%= f.button :submit, class: 'btn btn-primary form-control' %>
   </div>
+  <br>
+  <br>
 <% end %>

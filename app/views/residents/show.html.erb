@@ -1,23 +1,26 @@
 <p id="notice"><%= notice %></p>
 
 <h1>Residents</h1>
-<%= link_to 'New Resident', new_resident_path %>
-<br>
-<br>
+
 <table class="table table-striped table-bordered">
     <thead>
       <tr>
         <th>Name</th>
         <th>Next of Kin</th>
         <th>Date of Birth</th>
+        <th>Gender</th>
+        <th>Medical conditions</th>
         <th colspan="3"></th>
       </tr>
-    </thead>
+    </thead>      
 
   <tbody>
       <tr>
         <td><%= @resident.fullname %></td>
         <td><%= @resident.next_of_kin %></td>
+        <td><%= @resident.dob %></td>
+        <td><%= @resident.sex %></td>
+        <td><%= @resident.medical_conditions %></td>
   
       </tr>
   </tbody>
@@ -26,7 +29,7 @@
 <br>
 <p id="notice"><%= notice %></p>
 
-<%= @resident %>
-
 <%= link_to 'Edit', edit_resident_path(@resident) %> |
 <%= link_to 'Back', residents_path %>
+
+<%= @notes %>

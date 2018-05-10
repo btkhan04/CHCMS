@@ -2,18 +2,17 @@
 
 <h1>Residents Daily Notes</h1>
 
-<%= link_to 'New Note', new_note_path %>
+<%= button_to "Add new note", new_note_path, class: 'btn btn-primary' ,:method => :get  %>
 
-<br>
-<br>
 <table class="table table-striped table-bordered">
   <thead>
     <tr>
-      <th>Name</th>
+      <th>Resident</th>
       <th>Description</th>
       <th>Food intake</th>
       <th>Fluid intake</th>
       <th>Medicine</th>
+      <th>Created By</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -26,12 +25,19 @@
         <td><%= note.food_intake %></td>
         <td><%= note.fluid_intake %></td>
         <td><%= note.medicine %></td>
-        <td><%= link_to 'Show', note %></td>
-        <td><%= link_to 'Edit', edit_note_path(note) %></td>
-        <td><%= link_to 'Destroy', note, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= note.user.name %></td>
+        <td><%= link_to 'Show', note,  class: 'btn btn-info' %></td>
+        <td><%= link_to 'Edit', edit_note_path(note),  class: 'btn btn-success' %></td>
+        <td><%= link_to 'Destroy', note,  class: 'btn btn-danger',  method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>
 </table>
 
+<%= @notes %>
+<br>
+<br>
+<br>
+<br>
+<br>
 <br>

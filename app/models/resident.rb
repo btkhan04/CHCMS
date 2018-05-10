@@ -1,6 +1,11 @@
 class Resident < ApplicationRecord
+validates :first_name, presence: { message: "first name can't be blank" }
+validates_length_of :first_name, within: 2..20, too_long: 'too long', too_short: 'too short'
+validates :last_name, presence: { message: "last name can't be blank" }
+validates :next_of_kin, presence: true
+validates :dob , presence: true
 	# has_many :medical, ->{ order(:name).distinct } 
-	has_many :notes, foreign_key: "note_id"
+	has_many :notes
 	
 	# def date_of_birth
 	# 	self.date_of_birth ?  "#{self.date_of_birth.strftime('%d/%m/%y')} (#{self.age}" : ''

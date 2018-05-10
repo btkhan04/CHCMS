@@ -1,9 +1,7 @@
 <div class="row">
   <div class="spacer"></div>
   <div class="col-md-12">
-    <%= link_to "New message", new_conversation_path, class: "btn btn-success" %>
-    <br>
-    <br>
+    <%= button_to "New message", new_conversation_path, class: 'btn btn-success' ,:method => :get  %>
     <div class="spacer"></div>
   </div>
 

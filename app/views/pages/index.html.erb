@@ -1,37 +1,50 @@
 <% content_for :top_content do %>
-  <div class="jumbotron ver">
-    <div class="container">
+  <div class="jumbotron charts">
       <h1>CHCMS</h1>
-    </div>
+
     <div class="icons" style="width:350px; margin:0 auto;">
 	  <i class="fa fa-comment fa-5x fa-lg"></i>
 	  <i class="fa fa-calendar-alt fa-5x fa-lg"></i>
 	  <span><span class="label label-danger pull-left"><%=unread_messages_count%></span><i class="fas fa-user fa-5x fa-lg"></i></span>
 	</div>
   </div>
-  <%= pie_chart Resident.total %>
-    <%= pie_chart Medical.medical %>
+  <div class="charts">
+	  <%= pie_chart Resident.total,
+	  title: "Residents added this month"
+	   %>
+	</div>
+	<div class="charts">
+	    <%= column_chart Note.by_notes,
+	    title: "Daily Resident notes",
+	    colors: ['brown'],
+	    library: {
+	    	tooltip: {
+	    		pointFormat: 'Residents notes'
+	    	}
+	    } 
+	    %>
+	</div>
 
+	<div class="charts">
+	    <%= pie_chart Medical.medical,
+	    title: "Medical conditions",
+	    colors: ['brown'],
+	    library: {
+	    	tooltip: {
+	    		pointFormat: 'Medical notes'
+	    	}
+	    } %>
+	</div>
 
-  <%= column_chart Medical.medical,
-  title: "Medical Conditions",
-  colors: ['brown'],
-  library: {
-    tooltip: {
-      pointFormat: 'MediNotes'
-    }
-  }
-%>
-
-<%= column_chart User.by_gender,
-  title: "Total count of residents",
-  colors: ['brown'],
-  library: {
-    tooltip: {
-      pointFormat: 'Count by gender'
-    }
-  }
-%>
+	<div class="charts">
+		<%= column_chart Resident.by_gender,
+		  title: "Total count of residents by gender",
+		  library: {
+		    tooltip: {
+		      pointFormat: 'Count by gender'
+		    }
+		  } %>
+	</div>
 <br>
 <br>
 <br>

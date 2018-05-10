@@ -20,7 +20,6 @@ class User < ApplicationRecord
   
   has_many :shifts
   has_many :notes
-  has_many :medical_notes
 
   acts_as_messageable
 
@@ -51,7 +50,7 @@ class User < ApplicationRecord
     params.require(:user).permit(:admin, :first_name, :last_name, :email, :password, :password_confirmation, :current_password)
   end
 
-  def name
-      return first_name + " " + last_name 
+   def name
+      self.first_name << " " << self.last_name
   end 
 end
